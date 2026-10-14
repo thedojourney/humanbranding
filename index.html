@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  [회사명] 보험컨설턴트 채용 랜딩페이지 (Netlify 드래그앤드롭 배포용)
+  ==========================================================================
+  배포 전 교체할 플레이스홀더 목록 (파일 전체에서 "찾아 바꾸기" 하세요)
+  - [회사명]                    : 회사/지점명 (헤더 로고, 타이틀, 본문, 푸터)
+  - [카카오톡 오픈채팅 URL]     : https://open.kakao.com/o/xxxxxxx (모든 카카오톡 버튼)
+  - --brand / --brand-dark      : <style> 상단 CSS 변수, 브랜드 HEX 색상
+  - PIXEL_ID                    : <head> 안 Meta Pixel 주석 블록 (주석 해제 후 교체)
+  - [확정된 복지 항목]          : 혜택 카드 4번째 (예: 출산지원금 ○○○만원) — 확정된 것만
+  - [교육 기수 일정]            : 교육 섹션 하단 (예: 매월 첫째 주 월요일 개강)
+  - [개인정보 보유기간]         : 개인정보 동의 펼쳐보기 (예: 상담 종료 후 1년)
+  - [개인정보처리방침 URL]      : 푸터 링크
+  - [사업자 정보] / [대표 연락처] : 푸터
+  - images/hero.jpg             : 히어로 배경 사진 (선택, CSS 주석 해제)
+  검색 키워드: "TODO:" 로 모든 교체 위치를 찾을 수 있습니다.
+  ==========================================================================
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- TODO: [회사명] 교체 -->
+<title>[회사명] 보험컨설턴트 채용 | 경력 없어도 처음부터 배워요</title>
+<meta name="description" content="보험 경력·나이·전공 무관. 시험·기초 교육부터 1:1 코칭까지 단계별로 준비할 수 있어요. 부담 없이 상담부터 시작하세요.">
+<meta property="og:title" content="보험, 한 번도 안 해봤어도 괜찮아요">
+<meta property="og:description" content="처음부터 배우면 됩니다. 30초 자가진단으로 나에게 맞는 시작 과정을 확인해 보세요.">
+<meta property="og:type" content="website">
+<!-- TODO: og:image 사용 시 <meta property="og:image" content="/images/og.jpg"> 추가 -->
+<meta name="theme-color" content="#2457E6">
+
+<!-- 폰트: Pretendard (유일한 외부 리소스) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<!-- TODO: Meta Pixel 기본 코드 — 주석 해제 후 PIXEL_ID 를 실제 픽셀 ID로 교체
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"></noscript>
+-->
+
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+/* ===== 디자인 토큰 ===== */
+:root {
+  /* TODO: --brand 를 [브랜드 HEX]로 교체, --brand-dark 는 한 톤 어둡게 */
+  --brand: #2457E6;
+  --brand-dark: #173A9E;
+  --brand-soft: #EAF0FF;
+  --bg: #F6F8FC;
+  --surface: #FFFFFF;
+  --text: #1B1F2A;
+  --muted: #5B6475;
+  --line: #E2E7F0;
+  --accent: #E8500E;        /* CTA 고대비 색 */
+  --accent-dark: #C24008;
+  --kakao: #FEE500;
+  --kakao-text: #191919;
+  --error: #D93025;
+  --success: #0F8A5F;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow: 0 6px 24px rgba(23, 58, 158, .08);
+  --header-h: 60px;
+  --bar-h: 72px;
+}
+
+/* ===== 기본 ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, p { margin: 0; }
+section { scroll-margin-top: calc(var(--header-h) + 12px); }
+.container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+
+/* ===== 버튼 ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 52px; padding: 0 22px;
+  border: 0; border-radius: 999px;
+  font-size: 17px; font-weight: 700; text-decoration: none; line-height: 1.2;
+  cursor: pointer; transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { transform: scale(.98); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(232, 80, 14, .28); }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-kakao { background: var(--kakao); color: var(--kakao-text); }
+.btn-kakao:hover { background: #F2DA00; }
+.btn-ghost { background: transparent; color: var(--muted); border: 1.5px solid var(--line); }
+.btn-ghost:hover { border-color: var(--muted); }
+.btn-block { width: 100%; }
+.btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+
+/* ===== 공통 섹션 ===== */
+.section { padding: 64px 0; }
+.section-alt { background: var(--surface); }
+.eyebrow { display: inline-block; font-size: 14px; font-weight: 700; color: var(--brand); letter-spacing: .02em; margin-bottom: 8px; }
+.section-title { font-size: 26px; line-height: 1.35; font-weight: 800; letter-spacing: -.02em; }
+.section-desc { margin-top: 10px; color: var(--muted); font-size: 16px; }
+.section-head { margin-bottom: 28px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.icon-box { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); }
+.icon-box svg { width: 26px; height: 26px; }
+.hl { color: var(--brand); }
+.hl-mark { background: linear-gradient(transparent 60%, rgba(254, 229, 0, .55) 60%); }
+
+/* ===== 1. 헤더 ===== */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--header-h);
+  background: rgba(255, 255, 255, .92); backdrop-filter: saturate(180%) blur(10px); -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid transparent; transition: border-color .2s ease;
+}
+.site-header.is-scrolled { border-bottom-color: var(--line); }
+.site-header .container { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { font-size: 18px; font-weight: 800; color: var(--brand-dark); text-decoration: none; letter-spacing: -.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header-cta { min-height: 48px; padding: 0 18px; font-size: 15px; }
+
+/* ===== 2. 히어로 ===== */
+.hero {
+  position: relative; overflow: hidden;
+  padding: calc(var(--header-h) + 40px) 0 56px;
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(36, 87, 230, .18) 0%, transparent 60%),
+    radial-gradient(90% 60% at 0% 100%, rgba(254, 229, 0, .22) 0%, transparent 60%),
+    linear-gradient(180deg, #F0F4FF 0%, var(--bg) 100%);
+  /* TODO: 사진 사용 시 아래 주석 해제 (images/hero.jpg 업로드)
+  background:
+    linear-gradient(180deg, rgba(240,244,255,.92) 0%, rgba(246,248,252,.96) 100%),
+    url("images/hero.jpg") center/cover no-repeat; */
+}
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding: 0; list-style: none; }
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line);
+  font-size: 14px; font-weight: 700; color: var(--brand-dark);
+}
+.badge svg { width: 16px; height: 16px; color: var(--brand); }
+.hero-title { font-size: 30px; line-height: 1.32; font-weight: 800; letter-spacing: -.03em; }
+.hero-title .line { display: block; }
+.hero-sub { margin-top: 16px; font-size: 17px; color: var(--muted); max-width: 560px; }
+.hero-ctas { margin-top: 28px; display: grid; gap: 10px; max-width: 420px; }
+.hero-note { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+/* ===== 3. 퀴즈 ===== */
+.quiz-card { background: var(--surface); border-radius: 20px; box-shadow: var(--shadow); border: 1px solid var(--line); padding: 24px 20px; max-width: 640px; margin: 0 auto; }
+.quiz-progress-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.quiz-progress { flex: 1; height: 8px; border-radius: 999px; background: var(--brand-soft); overflow: hidden; }
+.quiz-progress-bar { height: 100%; width: 0; background: var(--brand); border-radius: inherit; transition: width .35s ease; }
+.quiz-step-label { font-size: 14px; font-weight: 700; color: var(--brand); min-width: 36px; text-align: right; }
+.quiz-q { font-size: 20px; font-weight: 800; line-height: 1.4; margin-bottom: 16px; letter-spacing: -.02em; }
+.quiz-options { display: grid; gap: 10px; }
+.quiz-option {
+  min-height: 56px; padding: 12px 18px; text-align: left;
+  border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: var(--surface);
+  font-size: 17px; font-weight: 600; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  transition: border-color .15s ease, background-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.quiz-option::after { content: "›"; font-size: 22px; color: var(--muted); line-height: 1; }
+.quiz-option:hover { border-color: var(--brand); }
+.quiz-option.is-selected { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-dark); }
+.quiz-back { margin-top: 14px; background: none; border: 0; color: var(--muted); font-size: 15px; min-height: 48px; padding: 0 4px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.quiz-pane.enter { animation: quizIn .35s ease both; }
+@keyframes quizIn { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+.quiz-result { text-align: center; }
+.quiz-result-icon { width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); }
+.quiz-result-icon svg { width: 32px; height: 32px; }
+.quiz-result-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 14px; padding: 0; list-style: none; }
+.quiz-result-tags li { font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--bg); color: var(--muted); }
+.quiz-result-msg { font-size: 20px; font-weight: 800; line-height: 1.45; letter-spacing: -.02em; }
+.quiz-result-sub { margin-top: 10px; color: var(--muted); }
+.quiz-result .btn { margin-top: 22px; }
+.quiz-result-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+/* ===== 4. 걱정 vs 실제 ===== */
+.worry-list { display: grid; gap: 14px; }
+.worry-card { padding: 0; overflow: hidden; }
+.worry-q, .worry-a { padding: 16px 20px; display: flex; gap: 12px; align-items: flex-start; }
+.worry-q { background: #F3F4F7; color: var(--muted); font-weight: 600; }
+.worry-a { font-weight: 700; }
+.worry-tag { flex-shrink: 0; font-size: 12px; font-weight: 800; padding: 3px 8px; border-radius: 6px; margin-top: 2px; }
+.worry-q .worry-tag { background: #DADDE4; color: #4A5160; }
+.worry-a .worry-tag { background: var(--brand); color: #fff; }
+
+/* ===== 5. 이런 분들이 시작해요 ===== */
+.who-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.who-card { padding: 18px 16px; }
+.who-card h3 { margin-top: 12px; font-size: 17px; font-weight: 800; }
+.who-card p { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.who-note { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+/* ===== 6. 교육 4단계 ===== */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 23px; top: 24px; bottom: 24px; width: 2px; background: var(--brand-soft); }
+.timeline-item { position: relative; display: flex; gap: 16px; padding-bottom: 22px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-num { position: relative; z-index: 1; flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--brand); color: #fff; font-weight: 800; font-size: 18px; box-shadow: 0 0 0 6px var(--surface); }
+.timeline-body { padding-top: 4px; }
+.timeline-body h3 { font-size: 18px; font-weight: 800; }
+.timeline-body p { margin-top: 4px; color: var(--muted); font-size: 15px; }
+.schedule-box { margin-top: 28px; padding: 16px 18px; border-radius: var(--radius-sm); background: var(--brand-soft); color: var(--brand-dark); font-size: 15px; font-weight: 600; }
+
+/* ===== 7. 혜택 ===== */
+.benefit-grid { display: grid; gap: 12px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; }
+.benefit-card h3 { font-size: 17px; font-weight: 800; }
+.benefit-card p { margin-top: 2px; font-size: 15px; color: var(--muted); }
+
+/* ===== 8. 시작 과정 ===== */
+.process-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: step; }
+.process-item { display: flex; align-items: center; gap: 14px; padding: 16px 18px; }
+.process-item::before { counter-increment: step; content: "STEP " counter(step); flex-shrink: 0; font-size: 12px; font-weight: 800; color: var(--brand); background: var(--brand-soft); padding: 4px 8px; border-radius: 6px; }
+.process-item strong { display: block; font-size: 17px; }
+.process-item span { display: block; font-size: 14px; color: var(--muted); }
+.process-note { margin-top: 16px; font-weight: 700; color: var(--brand-dark); }
+
+/* ===== 9. FAQ ===== */
+.faq-list { display: grid; gap: 10px; }
+.faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
+.faq-item summary {
+  list-style: none; cursor: pointer; min-height: 56px; padding: 16px 52px 16px 18px; position: relative;
+  font-weight: 700; font-size: 16px; -webkit-tap-highlight-color: transparent;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before { content: "Q"; color: var(--brand); font-weight: 800; margin-right: 8px; }
+.faq-item summary::after {
+  content: ""; position: absolute; right: 20px; top: 50%; width: 10px; height: 10px; margin-top: -7px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.faq-answer { padding: 0 18px 18px; color: var(--muted); font-size: 15px; }
+.faq-answer a { color: var(--brand); font-weight: 700; }
+
+/* ===== 10. 상담 폼 ===== */
+.apply { background: linear-gradient(180deg, var(--brand-dark) 0%, var(--brand) 100%); color: #fff; }
+.apply .eyebrow { color: var(--kakao); }
+.apply .section-desc { color: rgba(255, 255, 255, .85); }
+.form-card { background: var(--surface); color: var(--text); border-radius: 20px; padding: 24px 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, .18); max-width: 560px; margin: 0 auto; }
+.form-steps { display: flex; gap: 8px; margin-bottom: 20px; }
+.form-steps span { flex: 1; height: 6px; border-radius: 999px; background: var(--line); transition: background-color .25s ease; }
+.form-steps span.is-active { background: var(--brand); }
+.form-step-title { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+.form-step-title small { font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 4px; }
+.field { margin-bottom: 16px; }
+.field label, .field .label { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.field .optional { font-weight: 500; color: var(--muted); font-size: 13px; }
+.input, .select, .textarea {
+  width: 100%; min-height: 52px; padding: 12px 14px;
+  border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: #fff;
+  font-size: 16px; /* iOS 확대 방지 */
+  transition: border-color .15s ease;
+  -webkit-appearance: none; appearance: none;
+}
+.select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235B6475' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.textarea { min-height: 96px; resize: vertical; }
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(36, 87, 230, .15); }
+.is-invalid { border-color: var(--error) !important; }
+.field-error { display: none; margin-top: 6px; font-size: 14px; color: var(--error); font-weight: 600; }
+.field-error.is-shown { display: block; }
+.consent { margin: 4px 0 18px; padding: 14px; border-radius: var(--radius-sm); background: var(--bg); }
+.consent-check { display: flex; align-items: center; gap: 10px; min-height: 48px; cursor: pointer; font-weight: 700; font-size: 15px; }
+.consent-check input { width: 24px; height: 24px; flex-shrink: 0; accent-color: var(--brand); margin: 0; }
+.consent details { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.consent summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.consent table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 13px; }
+.consent th, .consent td { text-align: left; vertical-align: top; padding: 8px 6px; border-top: 1px solid var(--line); }
+.consent th { width: 84px; color: var(--text); font-weight: 700; white-space: nowrap; }
+.form-actions { display: grid; gap: 10px; }
+.form-actions-row { display: grid; grid-template-columns: auto 1fr; gap: 10px; }
+.form-message { display: none; margin-top: 12px; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; }
+.form-message.is-error { display: block; background: #FDECEA; color: var(--error); }
+.form-assure { margin-top: 12px; font-size: 13px; color: var(--muted); text-align: center; }
+.hidden-field { display: none !important; }
+.form-success { text-align: center; padding: 12px 0; }
+.form-success .quiz-result-icon { background: #E3F5EE; color: var(--success); }
+.form-success h3 { font-size: 22px; font-weight: 800; }
+.form-success p { margin-top: 8px; color: var(--muted); }
+.form-success .btn { margin-top: 20px; }
+
+/* ===== 11. 최종 CTA ===== */
+.final-cta { text-align: center; }
+.final-cta .section-title { font-size: 24px; }
+.final-cta .btn { margin-top: 24px; min-width: 260px; }
+
+/* ===== 13. 푸터 ===== */
+.site-footer { padding: 32px 0 40px; background: #12151C; color: #A7AEBB; font-size: 13px; }
+.site-footer .disclaimer { color: #D5DAE3; font-size: 14px; line-height: 1.6; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid #2A2F3A; }
+.site-footer p + p { margin-top: 4px; }
+.site-footer a { color: #D5DAE3; }
+
+/* ===== 12. 모바일 하단 고정 CTA ===== */
+.sticky-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, .96); border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, .06);
+  transform: translateY(110%); transition: transform .25s ease; visibility: hidden;
+}
+.sticky-bar.is-visible { transform: none; visibility: visible; }
+.sticky-bar .btn { min-height: 52px; font-size: 16px; padding: 0 12px; }
+
+/* ===== 스크롤 fade-up ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .js .reveal.is-visible { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ===== 768px ===== */
+@media (min-width: 768px) {
+  .container { padding: 0 32px; }
+  .section { padding: 88px 0; }
+  .section-title { font-size: 32px; }
+  .hero { padding: calc(var(--header-h) + 72px) 0 88px; }
+  .hero-title { font-size: 42px; }
+  .hero-sub { font-size: 19px; }
+  .hero-ctas { grid-template-columns: 1fr 1fr; max-width: 560px; }
+  .quiz-card, .form-card { padding: 36px; }
+  .quiz-options { grid-template-columns: 1fr 1fr; }
+  .worry-list { grid-template-columns: 1fr 1fr; }
+  .benefit-grid { grid-template-columns: 1fr 1fr; }
+  .process-list { grid-template-columns: 1fr 1fr; }
+  .final-cta .section-title { font-size: 32px; }
+}
+
+/* ===== 1024px ===== */
+@media (min-width: 1024px) {
+  body { padding-bottom: 0; }
+  .sticky-bar { display: none; }
+  .hero-title { font-size: 52px; }
+  .who-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .benefit-grid { grid-template-columns: repeat(4, 1fr); }
+  .benefit-card { flex-direction: column; }
+  .process-list { grid-template-columns: repeat(4, 1fr); }
+  .process-item { flex-direction: column; align-items: flex-start; }
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .timeline::before { left: 24px; right: 24px; top: 23px; bottom: auto; width: auto; height: 2px; }
+  .timeline-item { flex-direction: column; padding-bottom: 0; }
+  .faq-list { max-width: 820px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 1. 상단 고정 헤더 -->
+<header class="site-header" id="top">
+  <div class="container">
+    <!-- TODO: 로고 이미지 사용 시 <img src="images/logo.svg" alt="[회사명]" height="28"> 로 교체 -->
+    <a href="#hero" class="logo">[회사명]</a>
+    <a href="#apply" class="btn btn-primary header-cta">상담 신청</a>
+  </div>
+</header>
+
+<main>
+
+<!-- 2. 히어로 -->
+<section class="hero" id="hero">
+  <div class="container">
+    <ul class="badges" aria-label="지원 조건">
+      <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 6"/></svg>보험 경력 무관</li>
+      <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 6"/></svg>나이·전공 무관</li>
+      <li class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 6"/></svg>처음부터 교육</li>
+    </ul>
+    <h1 class="hero-title">
+      <span class="line">보험, 한 번도 안 해봤어도</span>
+      <span class="line"><span class="hl-mark">괜찮아요.</span></span>
+      <span class="line hl">처음부터 배우면 됩니다.</span>
+    </h1>
+    <p class="hero-sub">시험 준비부터 상품 이해, 상담 실무까지. 단계별 교육과 1:1 코칭으로 처음 시작하는 분도 차근차근 준비할 수 있어요.</p>
+    <div class="hero-ctas">
+      <a href="#quiz" class="btn btn-primary">30초 자가진단 해보기</a>
+      <!-- TODO: [카카오톡 오픈채팅 URL] 교체 -->
+      <a href="[카카오톡 오픈채팅 URL]" class="btn btn-kakao js-kakao" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1.1 3.8c-.1.4.3.7.6.5l4.4-2.9c.5.1.9.1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+        카카오톡으로 바로 물어보기
+      </a>
+    </div>
+    <p class="hero-note">상담은 입사가 아니에요. 조건을 충분히 듣고 직접 결정하세요.</p>
+  </div>
+</section>
+
+<!-- 3. 30초 자가진단 퀴즈 -->
+<section class="section" id="quiz">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center">
+      <span class="eyebrow">30초 자가진단</span>
+      <h2 class="section-title">나는 어떻게 시작하면 좋을까?</h2>
+      <p class="section-desc">세 가지만 골라 주세요. 나에게 맞는 시작 과정을 알려드려요.</p>
+    </div>
+    <div class="quiz-card reveal">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress" role="progressbar" aria-label="자가진단 진행률" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+          <div class="quiz-progress-bar" id="quiz-bar"></div>
+        </div>
+        <span class="quiz-step-label" id="quiz-step-label">1/3</span>
+      </div>
+      <div id="quiz-stage" aria-live="polite">
+        <noscript><p>자가진단은 자바스크립트가 필요해요. 아래 상담 신청 폼을 바로 이용해 주세요.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 걱정 vs 실제 -->
+<section class="section section-alt" id="worry">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">걱정 vs 실제</span>
+      <h2 class="section-title">이런 걱정, <span class="hl">다들 하셨어요</span></h2>
+    </div>
+    <div class="worry-list">
+      <div class="card worry-card reveal">
+        <p class="worry-q"><span class="worry-tag">걱정</span>"경력이 없는데…"</p>
+        <p class="worry-a"><span class="worry-tag">실제</span>기초 교육·시험 준비부터 단계별로 지원해요.</p>
+      </div>
+      <div class="card worry-card reveal">
+        <p class="worry-q"><span class="worry-tag">걱정</span>"영업을 해본 적 없어서…"</p>
+        <p class="worry-a"><span class="worry-tag">실제</span>상담 실무와 1:1 코칭으로 함께 준비해요.</p>
+      </div>
+      <div class="card worry-card reveal">
+        <p class="worry-q"><span class="worry-tag">걱정</span>"지인 영업만 하는 거 아닌가요?"</p>
+        <p class="worry-a"><span class="worry-tag">실제</span>고객 발굴 방식은 상담에서 구체적으로 안내해 드려요.</p>
+      </div>
+      <div class="card worry-card reveal">
+        <p class="worry-q"><span class="worry-tag">걱정</span>"상담하면 바로 입사해야 하나요?"</p>
+        <p class="worry-a"><span class="worry-tag">실제</span>아니요, 조건을 확인한 뒤 직접 결정하시면 돼요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 이런 분들이 시작해요 -->
+<section class="section" id="who">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">이런 분들이 시작해요</span>
+      <h2 class="section-title">지금 어떤 상황이든<br>시작점은 같아요</h2>
+    </div>
+    <div class="who-grid">
+      <div class="card who-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+        <h3>직장인</h3>
+        <p>지금 일과 다른 새로운 커리어를 고민하는 분</p>
+      </div>
+      <div class="card who-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+        <h3>전업주부</h3>
+        <p>다시 일을 시작하고 싶은데 어디서부터 할지 막막한 분</p>
+      </div>
+      <div class="card who-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
+        <h3>구직중</h3>
+        <p>배우면서 시작할 수 있는 일을 찾고 있는 분</p>
+      </div>
+      <div class="card who-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></div>
+        <h3>자영업·프리랜서</h3>
+        <p>내 방식대로 일하며 새로운 분야에 도전하고 싶은 분</p>
+      </div>
+    </div>
+    <p class="who-note">* 위 카드는 지원 대상 예시이며, 실제 인물 사례가 아닙니다.</p>
+  </div>
+</section>
+
+<!-- 6. 교육 4단계 -->
+<section class="section section-alt" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">교육 4단계</span>
+      <h2 class="section-title">모르는 상태에서 시작해도<br><span class="hl">한 단계씩 준비</span>해요</h2>
+    </div>
+    <ol class="timeline">
+      <li class="timeline-item reveal">
+        <span class="timeline-num">1</span>
+        <div class="timeline-body"><h3>시험·기초 교육</h3><p>자격 시험 준비와 보험의 기본 개념부터 배워요.</p></div>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-num">2</span>
+        <div class="timeline-body"><h3>상품 이해</h3><p>고객에게 설명할 수 있도록 상품 구조를 익혀요.</p></div>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-num">3</span>
+        <div class="timeline-body"><h3>상담 실무</h3><p>실제 상담 흐름과 고객 응대 방법을 연습해요.</p></div>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-num">4</span>
+        <div class="timeline-body"><h3>1:1 코칭</h3><p>현장에서 생기는 고민을 선배와 1:1로 함께 풀어요.</p></div>
+      </li>
+    </ol>
+    <!-- TODO: [교육 기수 일정] 교체 (예: "매월 첫째 주 월요일 개강") — 긴급성 문구는 넣지 마세요 -->
+    <p class="schedule-box reveal">📅 교육 일정: [교육 기수 일정]</p>
+  </div>
+</section>
+
+<!-- 7. 혜택 -->
+<section class="section" id="benefits">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">함께하면</span>
+      <h2 class="section-title">이런 지원을 받을 수 있어요</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="card benefit-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg></div>
+        <div><h3>체계적 교육</h3><p>시험부터 실무까지 단계별 커리큘럼</p></div>
+      </div>
+      <div class="card benefit-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg></div>
+        <div><h3>1:1 코칭</h3><p>혼자 고민하지 않도록 선배가 함께해요</p></div>
+      </div>
+      <div class="card benefit-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V12M11 20V6M17 20v-9M2 20h20"/></svg></div>
+        <div><h3>성과에 따른 보상</h3><p>지급 기준은 상담에서 정확히 확인하세요</p></div>
+      </div>
+      <div class="card benefit-card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12"/><path d="M12 8C10 4 6 4 6 6.5S10 8 12 8zm0 0c2-4 6-4 6-1.5S14 8 12 8z"/></svg></div>
+        <!-- TODO: [확정된 복지 항목] 교체 (예: 출산지원금 ○○○만원). 확정되지 않았다면 이 카드를 삭제하세요 -->
+        <div><h3>[확정된 복지 항목]</h3><p>[복지 항목 한 줄 설명]</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 시작 과정 4단계 -->
+<section class="section section-alt" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">시작 과정</span>
+      <h2 class="section-title">상담부터 결정까지,<br>이렇게 진행돼요</h2>
+    </div>
+    <ol class="process-list">
+      <li class="card process-item reveal"><div><strong>상담 신청</strong><span>폼 작성 또는 카카오톡 문의</span></div></li>
+      <li class="card process-item reveal"><div><strong>업무·조건 안내</strong><span>하는 일과 조건을 솔직하게 설명</span></div></li>
+      <li class="card process-item reveal"><div><strong>교육 과정 확인</strong><span>일정과 교육 방식 안내</span></div></li>
+      <li class="card process-item reveal"><div><strong>지원 여부 결정</strong><span>충분히 생각하고 직접 결정</span></div></li>
+    </ol>
+    <p class="process-note reveal">상담을 받았다고 꼭 지원하지 않아도 괜찮아요.</p>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>보험 경력이 없어도 지원할 수 있나요?</summary>
+        <div class="faq-answer">네, 가능해요. 신입 중심으로 자격 시험 준비와 기초 교육부터 시작하는 과정이 있어요. 경력이 있는 분도 물론 환영해요.</div>
+      </details>
+      <details class="faq-item">
+        <summary>지인 영업만 하게 되나요?</summary>
+        <div class="faq-answer">고객을 만나는 방식은 여러 가지가 있어요. 조직에서 실제로 활용하는 고객 발굴 방식은 상담에서 구체적으로 안내해 드려요.</div>
+      </details>
+      <details class="faq-item">
+        <summary>고정급이 있나요?</summary>
+        <!-- TODO: 확정된 보상 구조가 있다면 사실에 맞게 수정 (금액 약속 표현 금지) -->
+        <div class="faq-answer">보상 구조(고정급 여부, 수수료, 지원 제도 등)는 개인 및 조직 기준에 따라 달라요. 상담에서 기준을 정확하게 안내해 드릴게요.</div>
+      </details>
+      <details class="faq-item">
+        <summary>교육은 어떻게 진행되나요?</summary>
+        <div class="faq-answer">시험·기초 교육 → 상품 이해 → 상담 실무 → 1:1 코칭 순서로 진행돼요. 구체적인 일정과 방식은 상담에서 안내해 드려요.</div>
+      </details>
+      <details class="faq-item">
+        <summary>상담 신청하면 바로 입사해야 하나요?</summary>
+        <div class="faq-answer">아니요. 상담은 업무와 조건을 알아보는 자리예요. 충분히 듣고 고민한 뒤 지원 여부를 직접 결정하시면 돼요.</div>
+      </details>
+      <details class="faq-item">
+        <summary>카카오톡으로 먼저 물어봐도 되나요?</summary>
+        <div class="faq-answer">물론이에요. 폼 작성이 부담스럽다면 <a href="[카카오톡 오픈채팅 URL]" class="js-kakao" target="_blank" rel="noopener">카카오톡 오픈채팅</a>으로 편하게 먼저 물어보세요.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- TODO: [실제 후기가 있을 경우에만] 후기 섹션 — 본인 동의를 받은 실제 후기만 게시하세요. 지어낸 후기·수입 인증 금지
+<section class="section section-alt" id="reviews">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">먼저 시작한 분들</span><h2 class="section-title">실제 이야기</h2></div>
+    <div class="card"><p>"[실제 후기 내용]"</p><p class="section-desc">[이니셜] · [시작 전 직업]</p></div>
+  </div>
+</section>
+-->
+
+<!-- 10. 단계형 상담 폼 -->
+<section class="section apply" id="apply">
+  <div class="container">
+    <div class="section-head" style="text-align:center">
+      <span class="eyebrow">상담 신청</span>
+      <h2 class="section-title">1분이면 신청 끝!</h2>
+      <p class="section-desc">남겨주신 시간에 맞춰 연락드릴게요.</p>
+    </div>
+
+    <div class="form-card">
+      <form name="recruit" id="recruit-form" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="recruit">
+        <p class="hidden-field"><label>입력하지 마세요: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="quiz_q1" value="">
+        <input type="hidden" name="quiz_q2" value="">
+        <input type="hidden" name="quiz_q3" value="">
+
+        <div class="form-steps" aria-hidden="true"><span class="is-active" id="step-dot-1"></span><span id="step-dot-2"></span></div>
+
+        <!-- 1단계 -->
+        <fieldset class="form-step" id="form-step-1" style="border:0;padding:0;margin:0">
+          <legend class="form-step-title">기본 정보 <small>1/2</small></legend>
+          <div class="field">
+            <label for="f-name">이름</label>
+            <input class="input" type="text" id="f-name" name="name" autocomplete="name" placeholder="홍길동" maxlength="20" required aria-describedby="err-name">
+            <p class="field-error" id="err-name" role="alert">이름을 입력해 주세요.</p>
+          </div>
+          <div class="field">
+            <label for="f-phone">휴대전화</label>
+            <input class="input" type="tel" id="f-phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13" required aria-describedby="err-phone">
+            <p class="field-error" id="err-phone" role="alert">010-0000-0000 형식으로 입력해 주세요.</p>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary btn-block" id="to-step-2">다음</button>
+          </div>
+        </fieldset>
+
+        <!-- 2단계 -->
+        <fieldset class="form-step" id="form-step-2" style="border:0;padding:0;margin:0">
+          <legend class="form-step-title">상담 정보 <small>2/2</small></legend>
+          <div class="field">
+            <label for="f-region">거주지역</label>
+            <select class="select" id="f-region" name="region" required aria-describedby="err-region">
+              <option value="">선택해 주세요</option>
+              <option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option>
+              <option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option>
+              <option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option>
+              <option>경남</option><option>제주</option>
+            </select>
+            <p class="field-error" id="err-region" role="alert">거주지역을 선택해 주세요.</p>
+          </div>
+          <div class="field">
+            <label for="f-job">현재 직업</label>
+            <select class="select" id="f-job" name="job" required aria-describedby="err-job">
+              <option value="">선택해 주세요</option>
+              <option>직장인</option><option>전업주부</option><option>구직중</option><option>자영업·프리랜서</option><option>학생</option><option>기타</option>
+            </select>
+            <p class="field-error" id="err-job" role="alert">현재 직업을 선택해 주세요.</p>
+          </div>
+          <div class="field">
+            <label for="f-exp">보험영업 경험</label>
+            <select class="select" id="f-exp" name="experience" required aria-describedby="err-exp">
+              <option value="">선택해 주세요</option>
+              <option>없음 (처음이에요)</option><option>조금 있음 (1년 미만)</option><option>있음 (1년 이상)</option>
+            </select>
+            <p class="field-error" id="err-exp" role="alert">보험영업 경험을 선택해 주세요.</p>
+          </div>
+          <div class="field">
+            <label for="f-time">상담 희망시간</label>
+            <select class="select" id="f-time" name="contact_time" required aria-describedby="err-time">
+              <option value="">선택해 주세요</option>
+              <option>평일 오전 (9~12시)</option><option>평일 오후 (12~18시)</option><option>평일 저녁 (18시 이후)</option><option>주말</option><option>언제든 괜찮아요</option>
+            </select>
+            <p class="field-error" id="err-time" role="alert">상담 희망시간을 선택해 주세요.</p>
+          </div>
+          <div class="field">
+            <label for="f-message">궁금한 내용 <span class="optional">(선택)</span></label>
+            <textarea class="textarea" id="f-message" name="message" maxlength="500" placeholder="예) 교육 기간이 얼마나 되나요?"></textarea>
+          </div>
+
+          <div class="consent">
+            <label class="consent-check">
+              <input type="checkbox" id="f-agree" name="privacy_agree" value="동의" required aria-describedby="err-agree">
+              <span>[필수] 개인정보 수집·이용에 동의합니다</span>
+            </label>
+            <p class="field-error" id="err-agree" role="alert">개인정보 수집·이용에 동의해 주세요.</p>
+            <details>
+              <summary>수집 항목·목적·보유기간 보기</summary>
+              <table>
+                <tr><th scope="row">수집 항목</th><td>이름, 휴대전화, 거주지역, 현재 직업, 보험영업 경험, 상담 희망시간, 문의 내용, 자가진단 응답, 유입 경로(광고 정보)</td></tr>
+                <tr><th scope="row">수집 목적</th><td>채용 상담 안내 및 연락, 상담 일정 조율</td></tr>
+                <!-- TODO: [개인정보 보유기간] 교체 (예: 상담 종료 후 1년, 요청 시 즉시 파기) -->
+                <tr><th scope="row">보유 기간</th><td>[개인정보 보유기간] 후 지체 없이 파기</td></tr>
+                <tr><th scope="row">거부 권리</th><td>동의를 거부할 수 있으며, 거부 시 상담 신청이 제한됩니다.</td></tr>
+              </table>
+            </details>
+          </div>
+
+          <div class="form-actions-row">
+            <button type="button" class="btn btn-ghost" id="to-step-1">이전</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">부담 없이 상담 신청하기</button>
+          </div>
+          <p class="form-message" id="form-message" role="alert"></p>
+        </fieldset>
+        <p class="form-assure">상담 신청은 입사 지원이 아니에요. 원치 않으면 언제든 그만 받을 수 있어요.</p>
+      </form>
+
+      <!-- 제출 완료 -->
+      <div class="form-success" id="form-success" hidden tabindex="-1">
+        <div class="quiz-result-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 6"/></svg></div>
+        <h3>상담 신청이 완료됐어요!</h3>
+        <p>남겨주신 희망 시간에 맞춰 연락드릴게요.<br>그 전에 궁금한 점은 카카오톡으로 편하게 물어보세요.</p>
+        <a href="[카카오톡 오픈채팅 URL]" class="btn btn-kakao btn-block js-kakao" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1.1 3.8c-.1.4.3.7.6.5l4.4-2.9c.5.1.9.1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+          카카오톡으로 먼저 물어보기
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. 최종 CTA -->
+<section class="section section-alt final-cta">
+  <div class="container reveal">
+    <h2 class="section-title">지금 결정하지 않아도 괜찮아요.<br><span class="hl">대화부터 해봐요.</span></h2>
+    <p class="section-desc">궁금한 것 하나만 물어봐도 좋아요.</p>
+    <a href="[카카오톡 오픈채팅 URL]" class="btn btn-kakao js-kakao" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1.1 3.8c-.1.4.3.7.6.5l4.4-2.9c.5.1.9.1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+      카카오톡으로 편하게 물어보기
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- 13. 푸터 -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="disclaimer">소득·수수료·지원 제도·계약 조건은 개인 및 조직 기준에 따라 달라질 수 있으며 상담 과정에서 안내됩니다.</p>
+    <!-- TODO: [회사명] [사업자 정보] [대표 연락처] [개인정보처리방침 URL] 교체 -->
+    <p>[회사명] · [사업자 정보]</p>
+    <p>문의: [대표 연락처] · <a href="[개인정보처리방침 URL]">개인정보처리방침</a></p>
+    <p>© [회사명]. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- 12. 모바일 하단 고정 CTA -->
+<div class="sticky-bar" id="sticky-bar" aria-hidden="true">
+  <a href="#apply" class="btn btn-primary" tabindex="-1">상담 신청</a>
+  <a href="[카카오톡 오픈채팅 URL]" class="btn btn-kakao js-kakao" target="_blank" rel="noopener" tabindex="-1">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1.1 3.8c-.1.4.3.7.6.5l4.4-2.9c.5.1.9.1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+    카카오톡
+  </a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var form = document.getElementById('recruit-form');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ----- 트래킹: fbq 없어도 에러 없이 동작 ----- */
+  function track(eventName) {
+    try { if (typeof window.fbq === 'function') window.fbq('track', eventName); } catch (e) {}
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('.js-kakao');
+    if (link) track('Contact');
+  });
+
+  function setHidden(name, value) {
+    var el = form.elements.namedItem(name);
+    if (el) el.value = value || '';
+  }
+
+  function scrollToEl(el) {
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  /* ----- UTM: URL → sessionStorage → hidden 필드 ----- */
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  (function initUtm() {
+    var params;
+    try { params = new URLSearchParams(window.location.search); } catch (e) { params = null; }
+    UTM_KEYS.forEach(function (key) {
+      var value = params ? params.get(key) : null;
+      if (value) {
+        try { sessionStorage.setItem(key, value); } catch (e) {}
+      } else {
+        try { value = sessionStorage.getItem(key); } catch (e) { value = null; }
+      }
+      if (value) setHidden(key, value.slice(0, 200));
+    });
+  })();
+
+  /* ----- 헤더 스크롤 상태 ----- */
+  var header = document.querySelector('.site-header');
+  function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ----- 30초 자가진단 퀴즈 ----- */
+  var QUESTIONS = [
+    { field: 'quiz_q1', q: '지금 어떤 상황이세요?', options: ['직장인', '주부', '구직중', '자영업·프리랜서'] },
+    { field: 'quiz_q2', q: '가장 원하는 건 무엇인가요?', options: ['새 커리어', '유연한 시간', '성장·배움', '추가 수입'] },
+    { field: 'quiz_q3', q: '보험 일 경험이 있으신가요?', options: ['처음이에요', '조금 있어요', '경력 있어요'] }
+  ];
+  // 결과는 판정이 아니라 "이렇게 시작할 수 있다"는 안내
+  var RESULT_MAIN = {
+    '처음이에요': '처음이라면 기초 교육부터 차근차근 시작하는 과정이 있어요.',
+    '조금 있어요': '경험이 조금 있다면, 기초를 다시 다지고 상담 실무로 이어가는 과정이 있어요.',
+    '경력 있어요': '경력이 있다면 지금까지의 경험을 살려 시작하는 방법을 함께 찾아볼 수 있어요.'
+  };
+  var RESULT_SUB = {
+    '새 커리어': '새로운 커리어라면 시험·기초 교육부터 1:1 코칭까지 4단계 과정을 먼저 확인해 보세요.',
+    '유연한 시간': '활동 시간과 일하는 방식은 상담에서 구체적으로 안내해 드려요.',
+    '성장·배움': '단계별 교육과 1:1 코칭으로 배우면서 성장할 수 있어요.',
+    '추가 수입': '보상 기준은 개인·조직마다 달라서 상담에서 정확하게 안내해 드려요.'
+  };
+  var JOB_MAP = { '직장인': '직장인', '주부': '전업주부', '구직중': '구직중', '자영업·프리랜서': '자영업·프리랜서' };
+  var EXP_MAP = { '처음이에요': '없음 (처음이에요)', '조금 있어요': '조금 있음 (1년 미만)', '경력 있어요': '있음 (1년 이상)' };
+
+  var stage = document.getElementById('quiz-stage');
+  var bar = document.getElementById('quiz-bar');
+  var barWrap = bar.parentNode;
+  var stepLabel = document.getElementById('quiz-step-label');
+  var answers = [];
+
+  function setProgress(done) {
+    bar.style.width = (done / QUESTIONS.length * 100) + '%';
+    barWrap.setAttribute('aria-valuenow', String(done));
+    stepLabel.textContent = done >= QUESTIONS.length ? '완료' : (done + 1) + '/' + QUESTIONS.length;
+  }
+
+  function mountPane(node) {
+    stage.innerHTML = '';
+    node.classList.add('quiz-pane', 'enter');
+    stage.appendChild(node);
+  }
+
+  function renderQuestion(index) {
+    setProgress(index);
+    var data = QUESTIONS[index];
+    var pane = document.createElement('div');
+    var title = document.createElement('h3');
+    title.className = 'quiz-q';
+    title.textContent = 'Q' + (index + 1) + '. ' + data.q;
+    pane.appendChild(title);
+
+    var list = document.createElement('div');
+    list.className = 'quiz-options';
+    list.setAttribute('role', 'group');
+    list.setAttribute('aria-label', data.q);
+    data.options.forEach(function (label) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quiz-option' + (answers[index] === label ? ' is-selected' : '');
+      btn.textContent = label;
+      btn.addEventListener('click', function () {
+        btn.classList.add('is-selected');
+        answers[index] = label;
+        setHidden(data.field, label);
+        setTimeout(function () {
+          if (index + 1 < QUESTIONS.length) renderQuestion(index + 1);
+          else renderResult();
+        }, reduceMotion ? 0 : 180);
+      });
+      list.appendChild(btn);
+    });
+    pane.appendChild(list);
+
+    if (index > 0) {
+      var back = document.createElement('button');
+      back.type = 'button';
+      back.className = 'quiz-back';
+      back.textContent = '← 이전 질문';
+      back.addEventListener('click', function () { renderQuestion(index - 1); });
+      pane.appendChild(back);
+    }
+    mountPane(pane);
+  }
+
+  function prefillSelect(id, value) {
+    var sel = document.getElementById(id);
+    if (sel && !sel.value && value) sel.value = value;
+  }
+
+  function renderResult() {
+    setProgress(QUESTIONS.length);
+    var pane = document.createElement('div');
+    pane.className = 'quiz-result';
+    pane.innerHTML =
+      '<div class="quiz-result-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>' +
+      '<ul class="quiz-result-tags"></ul>' +
+      '<p class="quiz-result-msg"></p>' +
+      '<p class="quiz-result-sub"></p>' +
+      '<button type="button" class="btn btn-primary btn-block" id="quiz-to-apply">상담 신청하기</button>' +
+      '<button type="button" class="quiz-back" id="quiz-restart">다시 해보기</button>' +
+      '<p class="quiz-result-note">자가진단은 시작 방법을 안내하기 위한 참고용이에요.</p>';
+    var tags = pane.querySelector('.quiz-result-tags');
+    answers.forEach(function (a) {
+      var li = document.createElement('li');
+      li.textContent = a;
+      tags.appendChild(li);
+    });
+    pane.querySelector('.quiz-result-msg').textContent = RESULT_MAIN[answers[2]] || RESULT_MAIN['처음이에요'];
+    pane.querySelector('.quiz-result-sub').textContent = RESULT_SUB[answers[1]] || '';
+    pane.querySelector('#quiz-to-apply').addEventListener('click', function () {
+      prefillSelect('f-job', JOB_MAP[answers[0]]);
+      prefillSelect('f-exp', EXP_MAP[answers[2]]);
+      scrollToEl(document.getElementById('apply'));
+    });
+    pane.querySelector('#quiz-restart').addEventListener('click', function () {
+      answers = [];
+      QUESTIONS.forEach(function (q) { setHidden(q.field, ''); });
+      renderQuestion(0);
+    });
+    mountPane(pane);
+  }
+
+  renderQuestion(0);
+
+  /* ----- 단계형 상담 폼 ----- */
+  var step1 = document.getElementById('form-step-1');
+  var step2 = document.getElementById('form-step-2');
+  var dot2 = document.getElementById('step-dot-2');
+  var phone = document.getElementById('f-phone');
+  var nameInput = document.getElementById('f-name');
+  var agree = document.getElementById('f-agree');
+  var submitBtn = document.getElementById('submit-btn');
+  var formMsg = document.getElementById('form-message');
+  var PHONE_RE = /^010-\d{4}-\d{4}$/;
+
+  step2.hidden = true;
+
+  function formatPhone(value) {
+    var d = value.replace(/\D/g, '').slice(0, 11);
+    if (d.length < 4) return d;
+    if (d.length < 8) return d.slice(0, 3) + '-' + d.slice(3);
+    return d.slice(0, 3) + '-' + d.slice(3, 7) + '-' + d.slice(7);
+  }
+  phone.addEventListener('input', function () {
+    phone.value = formatPhone(phone.value);
+    if (PHONE_RE.test(phone.value)) setError(phone, 'err-phone', false);
+  });
+
+  function setError(input, errId, show, text) {
+    var err = document.getElementById(errId);
+    if (text) err.textContent = text;
+    err.classList.toggle('is-shown', show);
+    input.classList.toggle('is-invalid', show);
+    input.setAttribute('aria-invalid', show ? 'true' : 'false');
+  }
+
+  function validateStep1() {
+    var ok = true;
+    var name = nameInput.value.trim();
+    var nameOk = name.length >= 2;
+    setError(nameInput, 'err-name', !nameOk, name ? '이름을 2자 이상 입력해 주세요.' : '이름을 입력해 주세요.');
+    if (!nameOk) ok = false;
+
+    var phoneOk = PHONE_RE.test(phone.value);
+    setError(phone, 'err-phone', !phoneOk, phone.value ? '010-0000-0000 형식으로 정확히 입력해 주세요.' : '휴대전화 번호를 입력해 주세요.');
+    if (!phoneOk) ok = false;
+
+    if (!ok) (nameOk ? phone : nameInput).focus();
+    return ok;
+  }
+
+  var REQUIRED_SELECTS = [['f-region', 'err-region'], ['f-job', 'err-job'], ['f-exp', 'err-exp'], ['f-time', 'err-time']];
+  function validateStep2() {
+    var firstBad = null;
+    REQUIRED_SELECTS.forEach(function (pair) {
+      var el = document.getElementById(pair[0]);
+      var bad = !el.value;
+      setError(el, pair[1], bad);
+      if (bad && !firstBad) firstBad = el;
+    });
+    var agreeBad = !agree.checked;
+    setError(agree, 'err-agree', agreeBad);
+    if (agreeBad && !firstBad) firstBad = agree;
+    if (firstBad) firstBad.focus();
+    return !firstBad;
+  }
+
+  REQUIRED_SELECTS.forEach(function (pair) {
+    var el = document.getElementById(pair[0]);
+    el.addEventListener('change', function () { if (el.value) setError(el, pair[1], false); });
+  });
+  agree.addEventListener('change', function () { if (agree.checked) setError(agree, 'err-agree', false); });
+  nameInput.addEventListener('input', function () { if (nameInput.value.trim().length >= 2) setError(nameInput, 'err-name', false); });
+
+  function goStep(n) {
+    step1.hidden = n !== 1;
+    step2.hidden = n !== 2;
+    dot2.classList.toggle('is-active', n === 2);
+    scrollToEl(document.querySelector('.form-card'));
+  }
+  document.getElementById('to-step-2').addEventListener('click', function () {
+    if (validateStep1()) goStep(2);
+  });
+  document.getElementById('to-step-1').addEventListener('click', function () { goStep(1); });
+  // 1단계에서 엔터 → 다음 단계
+  step1.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); if (validateStep1()) goStep(2); }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    formMsg.className = 'form-message';
+    if (!validateStep1()) { goStep(1); return; }
+    if (!validateStep2()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '보내는 중…';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      track('Lead');
+      form.hidden = true;
+      var success = document.getElementById('form-success');
+      success.hidden = false;
+      success.focus({ preventScroll: true });
+      scrollToEl(document.querySelector('.form-card'));
+    }).catch(function () {
+      formMsg.textContent = '전송 중 문제가 생겼어요. 잠시 후 다시 시도하거나 카카오톡으로 문의해 주세요.';
+      formMsg.className = 'form-message is-error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = '부담 없이 상담 신청하기';
+    });
+  });
+
+  /* ----- 모바일 하단 고정 CTA ----- */
+  var stickyBar = document.getElementById('sticky-bar');
+  var state = { pastHero: false, applyVisible: false, typing: false };
+  function updateBar() {
+    var show = state.pastHero && !state.applyVisible && !state.typing;
+    stickyBar.classList.toggle('is-visible', show);
+    stickyBar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    Array.prototype.forEach.call(stickyBar.querySelectorAll('a'), function (a) { a.tabIndex = show ? 0 : -1; });
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      state.pastHero = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      updateBar();
+    }, { rootMargin: '-80px 0px 0px 0px' }).observe(document.getElementById('hero'));
+    new IntersectionObserver(function (entries) {
+      state.applyVisible = entries[0].isIntersecting;
+      updateBar();
+    }).observe(document.getElementById('apply'));
+  }
+  // 입력 중(키보드 열림)에는 숨김
+  var TYPING_SEL = 'input, select, textarea';
+  document.addEventListener('focusin', function (e) {
+    if (e.target.matches && e.target.matches(TYPING_SEL)) { state.typing = true; updateBar(); }
+  });
+  document.addEventListener('focusout', function () {
+    setTimeout(function () {
+      var a = document.activeElement;
+      state.typing = !!(a && a.matches && a.matches(TYPING_SEL));
+      updateBar();
+    }, 50);
+  });
+
+  /* ----- 스크롤 fade-up ----- */
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(reveals, function (el) { el.classList.add('is-visible'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    Array.prototype.forEach.call(reveals, function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
